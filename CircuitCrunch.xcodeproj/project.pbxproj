@@ -17,6 +17,7 @@
 		F1A6C50A1B0FE536005C4425 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F1A6C5091B0FE536005C4425 /* Sprites.atlas */; };
 		F1A6C50C1B0FE7DA005C4425 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */; };
 		F1A6C50E1B0FED57005C4425 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50D1B0FED57005C4425 /* Array2D.swift */; };
+		F1A6C5101B0FEE99005C4425 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50F1B0FEE99005C4425 /* Level.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		F1A6C5091B0FE536005C4425 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		F1A6C50D1B0FED57005C4425 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		F1A6C50F1B0FEE99005C4425 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				F1A6C4E31B0FE517005C4425 /* Supporting Files */,
 				F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */,
 				F1A6C50D1B0FED57005C4425 /* Array2D.swift */,
+				F1A6C50F1B0FEE99005C4425 /* Level.swift */,
 			);
 			path = CircuitCrunch;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A6C5101B0FEE99005C4425 /* Level.swift in Sources */,
 				F1A6C4EA1B0FE517005C4425 /* GameScene.swift in Sources */,
 				F1A6C4EC1B0FE517005C4425 /* GameViewController.swift in Sources */,
 				F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */,

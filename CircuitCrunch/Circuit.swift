@@ -36,7 +36,7 @@ enum CircuitType: Int, Printable {
     }
 }
 
-class Circuit: Printable {
+class Circuit: Printable, Hashable {
     
     var column: Int
     var row: Int
@@ -54,4 +54,21 @@ class Circuit: Printable {
         return "type: \(circuitType) square: (\(column), \(row))"
     }
     
+    var hashValue: Int {
+        return row*10 + column
+    }
+    
 }
+
+func ==(lhs: Circuit, rhs: Circuit) -> Bool {
+    return lhs.column == rhs.column && lhs.row == rhs.row
+}
+
+
+
+
+
+
+
+
+
