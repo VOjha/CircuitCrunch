@@ -23,8 +23,7 @@
 		F13C59F01B14DECE00D86D37 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C59EE1B14DECE00D86D37 /* Tile.swift */; };
 		F13C59F21B14E01500D86D37 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C59F11B14E01500D86D37 /* Extensions.swift */; };
 		F13C59F31B14E01500D86D37 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C59F11B14E01500D86D37 /* Extensions.swift */; };
-		F13C59F51B14F46C00D86D37 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C59F41B14F46C00D86D37 /* Swap.swift */; };
-		F13C59F61B14F46C00D86D37 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C59F41B14F46C00D86D37 /* Swap.swift */; };
+		F1583A801B151290004F58FD /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1583A7F1B151290004F58FD /* Swap.swift */; };
 		F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */; };
 		F1A6C4EA1B0FE517005C4425 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E91B0FE517005C4425 /* GameScene.swift */; };
 		F1A6C4EC1B0FE517005C4425 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */; };
@@ -56,7 +55,7 @@
 		F13C59E31B14DE1800D86D37 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
 		F13C59EE1B14DECE00D86D37 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		F13C59F11B14E01500D86D37 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F13C59F41B14F46C00D86D37 /* Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
+		F1583A7F1B151290004F58FD /* Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
 		F1A6C4E01B0FE517005C4425 /* CircuitCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6C4E41B0FE517005C4425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +137,7 @@
 				F1A6C50F1B0FEE99005C4425 /* Level.swift */,
 				F13C59EE1B14DECE00D86D37 /* Tile.swift */,
 				F13C59F11B14E01500D86D37 /* Extensions.swift */,
-				F13C59F41B14F46C00D86D37 /* Swap.swift */,
+				F1583A7F1B151290004F58FD /* Swap.swift */,
 			);
 			path = CircuitCrunch;
 			sourceTree = "<group>";
@@ -288,7 +287,7 @@
 				F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */,
 				F1A6C50C1B0FE7DA005C4425 /* Circuit.swift in Sources */,
 				F1A6C50E1B0FED57005C4425 /* Array2D.swift in Sources */,
-				F13C59F51B14F46C00D86D37 /* Swap.swift in Sources */,
+				F1583A801B151290004F58FD /* Swap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F13C59F61B14F46C00D86D37 /* Swap.swift in Sources */,
 				F1A6C5001B0FE517005C4425 /* CircuitCrunchTests.swift in Sources */,
 				F13C59F31B14E01500D86D37 /* Extensions.swift in Sources */,
 				F13C59F01B14DECE00D86D37 /* Tile.swift in Sources */,
