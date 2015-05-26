@@ -12,6 +12,8 @@ class GameScene: SKScene {
     
     var swipeHandler: ((Swap) -> ())?
     
+    var selectionSprite = SKSpriteNode()
+    
     var level: Level!
     var swipeFromColumn: Int?
     var swipeFromRow: Int?
@@ -100,10 +102,12 @@ class GameScene: SKScene {
         let (success, column, row) = convertPoint(location)
         if success {
             
-            if let cookie = level.circuitAtColumn(column, row: row) {
+            if let circuit = level.circuitAtColumn(column, row: row) {
                 
                 swipeFromColumn = column
                 swipeFromRow = row
+                showSelectionIndicatorForCircuit(circuit)
+                
             }
         }
     }
@@ -132,6 +136,7 @@ class GameScene: SKScene {
             
             if horzDelta != 0 || vertDelta != 0 {
                 trySwapHorizontal(horzDelta, vertical: vertDelta)
+                hideSelectionIndicator()
                 
                 swipeFromColumn = nil
             }
@@ -160,6 +165,10 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if selectionSprite.parent != nil && swipeFromColumn != nil {
+            hideSelectionIndicator()
+        }
+        
         swipeFromColumn = nil
         swipeFromRow = nil
     }
@@ -184,6 +193,27 @@ class GameScene: SKScene {
         let moveB = SKAction.moveTo(spriteA.position, duration: Duration)
         moveB.timingMode = .EaseOut
         spriteB.runAction(moveB)
+    }
+    
+    func showSelectionIndicatorForCircuit(circuit: Circuit) {
+        
+        if selectionSprite.parent != nil {
+            selectionSprite.removeFromParent()
+        }
+        
+        if let sprite = circuit.sprite {
+            let texture = SKTexture(imageNamed: circuit.circuitType.highlightedSpriteName)
+            selectionSprite.size = texture.size()
+            selectionSprite.runAction(SKAction.setTexture(texture))
+            
+            sprite.addChild(selectionSprite)
+            selectionSprite.alpha = 1.0
+        }
+        
+    }
+    
+    func hideSelectionIndicator() {
+        selectionSprite.runAction(SKAction.sequence( [SKAction.fadeOutWithDuration(0.3), SKAction.removeFromParent()] ))
     }
     
 }
