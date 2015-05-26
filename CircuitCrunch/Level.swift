@@ -31,16 +31,44 @@ class Level {
         
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                var circuitType = CircuitType.random()
                 
-                let circuit = Circuit(column: column, row: row, circuitType: circuitType)
-                circuits[column, row] = circuit
+                if tiles[column, row] != nil {
                 
-                set.insert(circuit)
+                    var circuitType = CircuitType.random()
+                
+                    let circuit = Circuit(column: column, row: row, circuitType: circuitType)
+                    circuits[column, row] = circuit
+                
+                    set.insert(circuit)
+                }
             }
         }
         
         return set
+    }
+    
+    private var tiles = Array2D<Tile>(columns: NumColumns, rows: NumRows)
+    
+    func tileAtColumn(column: Int, row: Int) -> Tile? {
+        assert(column >= 0 && column < NumColumns)
+        assert(row >= 0 && row < NumRows)
+        return tiles[column, row]
+    }
+    
+    init(filename: String) {
+        
+        if let dictionary = Dictionary<String, AnyObject>.loadJSONFromBundle(filename) {
+            if let tilesArray: AnyObject = dictionary["tiles"] {
+                for (row, rowArray) in enumerate(tilesArray as! [[Int]]) {
+                    let tileRow = NumRows - row - 1
+                    for (column, value) in enumerate(rowArray) {
+                        if value == 1 {
+                            tiles[column, tileRow] = Tile()
+                        }
+                    }
+                }
+            }
+        }
     }
     
 }
