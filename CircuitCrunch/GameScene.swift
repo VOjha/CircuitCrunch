@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
     
     var level: Level!
+    var swipeFromColumn: Int?
+    var swipeFromRow: Int?
     
     let TileWidth: CGFloat = 32.0
     let TileHeight: CGFloat = 36.0
@@ -44,6 +46,9 @@ class GameScene: SKScene {
         circuitsLayer.position = layerPosition
         gameLayer.addChild(circuitsLayer)
         
+        swipeFromColumn = nil
+        swipeFromRow = nil
+        
     }
     
     func addSpritesForCircuits(circuits: Set<Circuit>) {
@@ -61,6 +66,16 @@ class GameScene: SKScene {
             y: CGFloat(row) * TileHeight + TileHeight/2)
     }
     
+    func convertPoint(point: CGPoint) -> (success: Bool, column: Int, row: Int) {
+        
+        if point.x >= 0 && point.x < CGFloat(NumColumns)*TileWidth && point.y >= 0 && point.y < CGFloat(NumRows)*TileHeight {
+            return (true, Int(point.x/TileWidth), Int(point.y/TileHeight))
+        } else {
+            return (false, 0, 0)
+        }
+        
+    }
+    
     func addTiles() {
         
         for row in 0..<NumRows {
@@ -75,4 +90,87 @@ class GameScene: SKScene {
         
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        let touch = touches.first as! UITouch
+        let location = touch.locationInNode(circuitsLayer)
+        
+        let (success, column, row) = convertPoint(location)
+        if success {
+            
+            if let cookie = level.circuitAtColumn(column, row: row) {
+                
+                swipeFromColumn = column
+                swipeFromRow = row
+            }
+        }
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        if swipeFromColumn == nil { return }
+        
+        let touch = touches.first as! UITouch
+        let location = touch.locationInNode(circuitsLayer)
+        
+        let (success, column, row) = convertPoint(location)
+        
+        if success {
+            
+            var horzDelta = 0, vertDelta = 0
+            if column < swipeFromColumn! {
+                horzDelta = -1
+            } else if column > swipeFromColumn! {
+                horzDelta = 1
+            } else if row < swipeFromRow! {
+                vertDelta = -1
+            } else if row > swipeFromRow! {
+                vertDelta = 1
+            }
+            
+            if horzDelta != 0 || vertDelta != 0 {
+                trySwapHorizontal(horzDelta, vertical: vertDelta)
+                
+                swipeFromColumn = nil
+            }
+            
+        }
+        
+    }
+    
+    func trySwapHorizontal(horzDelta: Int, vertical vertDelta: Int) {
+        
+        let toColumn = swipeFromColumn! + horzDelta
+        let toRow = swipeFromRow! + vertDelta
+        
+        if toColumn < 0 || toColumn >= NumColumns { return }
+        if toRow < 0 || toRow >= NumRows { return }
+        
+        if let toCircuit = level.circuitAtColumn(toColumn, row: toRow) {
+            if let fromCircuit = level.circuitAtColumn(swipeFromColumn!, row: swipeFromRow!) {
+                println("*** swapping \(fromCircuit) with \(toCircuit)")
+            }
+        }
+        
+    }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        swipeFromColumn = nil
+        swipeFromRow = nil
+    }
+    
+    override func touchesCancelled(touches: Set<NSObject>, withEvent event: UIEvent!) {
+        touchesEnded(touches, withEvent: event)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
