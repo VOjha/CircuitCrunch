@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		F13C59CC1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
 		F13C59CD1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
+		F13C59E41B14DE1800D86D37 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59DF1B14DE1800D86D37 /* Level_0.json */; };
+		F13C59E51B14DE1800D86D37 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59DF1B14DE1800D86D37 /* Level_0.json */; };
+		F13C59E61B14DE1800D86D37 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E01B14DE1800D86D37 /* Level_1.json */; };
+		F13C59E71B14DE1800D86D37 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E01B14DE1800D86D37 /* Level_1.json */; };
+		F13C59E81B14DE1800D86D37 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E11B14DE1800D86D37 /* Level_2.json */; };
+		F13C59E91B14DE1800D86D37 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E11B14DE1800D86D37 /* Level_2.json */; };
+		F13C59EA1B14DE1800D86D37 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E21B14DE1800D86D37 /* Level_3.json */; };
+		F13C59EB1B14DE1800D86D37 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E21B14DE1800D86D37 /* Level_3.json */; };
+		F13C59EC1B14DE1800D86D37 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E31B14DE1800D86D37 /* Level_4.json */; };
+		F13C59ED1B14DE1800D86D37 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59E31B14DE1800D86D37 /* Level_4.json */; };
 		F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */; };
 		F1A6C4EA1B0FE517005C4425 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E91B0FE517005C4425 /* GameScene.swift */; };
 		F1A6C4EC1B0FE517005C4425 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */; };
@@ -33,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		F13C59DF1B14DE1800D86D37 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
+		F13C59E01B14DE1800D86D37 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
+		F13C59E11B14DE1800D86D37 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
+		F13C59E21B14DE1800D86D37 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
+		F13C59E31B14DE1800D86D37 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
 		F1A6C4E01B0FE517005C4425 /* CircuitCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6C4E41B0FE517005C4425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F13C59DE1B14DE1800D86D37 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				F13C59DF1B14DE1800D86D37 /* Level_0.json */,
+				F13C59E01B14DE1800D86D37 /* Level_1.json */,
+				F13C59E11B14DE1800D86D37 /* Level_2.json */,
+				F13C59E21B14DE1800D86D37 /* Level_3.json */,
+				F13C59E31B14DE1800D86D37 /* Level_4.json */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		F1A6C4D71B0FE517005C4425 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +121,7 @@
 				F1A6C4ED1B0FE517005C4425 /* Main.storyboard */,
 				F1A6C4F01B0FE517005C4425 /* Images.xcassets */,
 				F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */,
+				F13C59DE1B14DE1800D86D37 /* Levels */,
 				F1A6C4F21B0FE517005C4425 /* LaunchScreen.xib */,
 				F1A6C4E31B0FE517005C4425 /* Supporting Files */,
 				F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */,
@@ -209,8 +237,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A6C4F41B0FE517005C4425 /* LaunchScreen.xib in Resources */,
+				F13C59EC1B14DE1800D86D37 /* Level_4.json in Resources */,
+				F13C59E81B14DE1800D86D37 /* Level_2.json in Resources */,
+				F13C59E41B14DE1800D86D37 /* Level_0.json in Resources */,
 				F1A6C4F11B0FE517005C4425 /* Images.xcassets in Resources */,
 				F13C59CC1B14DBBE00D86D37 /* Sprites.atlas in Resources */,
+				F13C59E61B14DE1800D86D37 /* Level_1.json in Resources */,
+				F13C59EA1B14DE1800D86D37 /* Level_3.json in Resources */,
 				F1A6C4EF1B0FE517005C4425 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +253,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13C59CD1B14DBBE00D86D37 /* Sprites.atlas in Resources */,
+				F13C59ED1B14DE1800D86D37 /* Level_4.json in Resources */,
+				F13C59EB1B14DE1800D86D37 /* Level_3.json in Resources */,
+				F13C59E91B14DE1800D86D37 /* Level_2.json in Resources */,
+				F13C59E71B14DE1800D86D37 /* Level_1.json in Resources */,
+				F13C59E51B14DE1800D86D37 /* Level_0.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
