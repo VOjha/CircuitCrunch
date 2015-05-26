@@ -71,4 +71,47 @@ class Level {
         }
     }
     
+    func performSwap(swap: Swap) {
+        
+        let columnA = swap.circuitA.column
+        let rowA = swap.circuitA.row
+        
+        let columnB = swap.circuitB.column
+        let rowB = swap.circuitB.row
+        
+        circuits[columnA, rowA] = swap.circuitB
+        swap.circuitB.column = columnA
+        swap.circuitB.row = rowA
+        
+        circuits[columnB, rowB] = swap.circuitA
+        swap.circuitA.column = columnB
+        swap.circuitA.row = rowB
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

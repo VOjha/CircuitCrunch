@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var swipeHandler: ((Swap) -> ())?
+    
     var level: Level!
     var swipeFromColumn: Int?
     var swipeFromRow: Int?
@@ -148,7 +150,10 @@ class GameScene: SKScene {
         
         if let toCircuit = level.circuitAtColumn(toColumn, row: toRow) {
             if let fromCircuit = level.circuitAtColumn(swipeFromColumn!, row: swipeFromRow!) {
-                println("*** swapping \(fromCircuit) with \(toCircuit)")
+                if let handler = swipeHandler {
+                    let swap = Swap(circuitA: fromCircuit, circuitB: toCircuit)
+                    handler(swap)
+                }
             }
         }
         
@@ -163,7 +168,45 @@ class GameScene: SKScene {
         touchesEnded(touches, withEvent: event)
     }
     
+    func animateSwap(swap: Swap, completion: ()->()) {
+        let spriteA = swap.circuitA.sprite!
+        let spriteB = swap.circuitB.sprite!
+        
+        spriteA.zPosition = 100
+        spriteB.zPosition = 90
+        
+        let Duration: NSTimeInterval = 0.3
+        
+        let moveA = SKAction.moveTo(spriteB.position, duration: Duration)
+        moveA.timingMode = .EaseOut
+        spriteA.runAction(moveA, completion: completion)
+        
+        let moveB = SKAction.moveTo(spriteA.position, duration: Duration)
+        moveB.timingMode = .EaseOut
+        spriteB.runAction(moveB)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
