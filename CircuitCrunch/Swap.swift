@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Vidushi Ojha. All rights reserved.
 //
 
-struct Swap: Printable {
+struct Swap: Printable, Hashable {
     
     let circuitA: Circuit
     let circuitB: Circuit
@@ -20,4 +20,13 @@ struct Swap: Printable {
         return "swap \(circuitA) with \(circuitB)"
     }
     
+    var hashValue: Int {
+        return circuitA.hashValue ^ circuitB.hashValue
+    }
+    
+}
+
+func ==(lhs: Swap, rhs: Swap) -> Bool {
+    return (lhs.circuitA == rhs.circuitA && lhs.circuitB == rhs.circuitB) ||
+           (lhs.circuitB == rhs.circuitA && lhs.circuitA == rhs.circuitB)
 }
