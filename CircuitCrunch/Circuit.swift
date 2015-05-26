@@ -9,15 +9,15 @@
 import SpriteKit
     
 enum CircuitType: Int, Printable {
-    case Unknown = 0, ElectricalSensor, ElectricalThreshold, Electronics, IntegratedCircuit, MemorySlot, Robot
+    case Unknown = 0, Sensor, Threshold, Electronics, Circuit, Memory, Robot
     
     var spriteName: String {
         let spriteNames = [
-        "ElectricalSensor",
-        "ElectricalThreshold",
+        "Sensor",
+        "Threshold",
         "Electronics",
-        "IntegratedCircuit",
-        "MemorySlot",
+        "Circuit",
+        "Memory",
         "Robot"]
         
         return spriteNames[rawValue - 1]

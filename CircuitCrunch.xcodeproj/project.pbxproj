@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13C59CC1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
+		F13C59CD1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
 		F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */; };
 		F1A6C4EA1B0FE517005C4425 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E91B0FE517005C4425 /* GameScene.swift */; };
 		F1A6C4EC1B0FE517005C4425 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */; };
@@ -14,7 +16,6 @@
 		F1A6C4F11B0FE517005C4425 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A6C4F01B0FE517005C4425 /* Images.xcassets */; };
 		F1A6C4F41B0FE517005C4425 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A6C4F21B0FE517005C4425 /* LaunchScreen.xib */; };
 		F1A6C5001B0FE517005C4425 /* CircuitCrunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4FF1B0FE517005C4425 /* CircuitCrunchTests.swift */; };
-		F1A6C50A1B0FE536005C4425 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F1A6C5091B0FE536005C4425 /* Sprites.atlas */; };
 		F1A6C50C1B0FE7DA005C4425 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */; };
 		F1A6C50E1B0FED57005C4425 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50D1B0FED57005C4425 /* Array2D.swift */; };
 		F1A6C5101B0FEE99005C4425 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C50F1B0FEE99005C4425 /* Level.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		F1A6C4E01B0FE517005C4425 /* CircuitCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6C4E41B0FE517005C4425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +44,6 @@
 		F1A6C4F91B0FE517005C4425 /* CircuitCrunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircuitCrunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6C4FE1B0FE517005C4425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A6C4FF1B0FE517005C4425 /* CircuitCrunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitCrunchTests.swift; sourceTree = "<group>"; };
-		F1A6C5091B0FE536005C4425 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		F1A6C50D1B0FED57005C4425 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		F1A6C50F1B0FEE99005C4425 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -92,7 +93,7 @@
 				F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */,
 				F1A6C4ED1B0FE517005C4425 /* Main.storyboard */,
 				F1A6C4F01B0FE517005C4425 /* Images.xcassets */,
-				F1A6C5091B0FE536005C4425 /* Sprites.atlas */,
+				F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */,
 				F1A6C4F21B0FE517005C4425 /* LaunchScreen.xib */,
 				F1A6C4E31B0FE517005C4425 /* Supporting Files */,
 				F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */,
@@ -209,8 +210,8 @@
 			files = (
 				F1A6C4F41B0FE517005C4425 /* LaunchScreen.xib in Resources */,
 				F1A6C4F11B0FE517005C4425 /* Images.xcassets in Resources */,
+				F13C59CC1B14DBBE00D86D37 /* Sprites.atlas in Resources */,
 				F1A6C4EF1B0FE517005C4425 /* Main.storyboard in Resources */,
-				F1A6C50A1B0FE536005C4425 /* Sprites.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13C59CD1B14DBBE00D86D37 /* Sprites.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +431,7 @@
 				F1A6C5051B0FE517005C4425 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1A6C5061B0FE517005C4425 /* Build configuration list for PBXNativeTarget "CircuitCrunchTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +440,7 @@
 				F1A6C5081B0FE517005C4425 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
