@@ -10,6 +10,12 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    let swapSound = SKAction.playSoundFileNamed("Chomp.wav", waitForCompletion: false)
+    let invalidSwapSound = SKAction.playSoundFileNamed("Error.wav", waitForCompletion: false)
+    let matchSound = SKAction.playSoundFileNamed("Ka-Ching.wav", waitForCompletion: false)
+    let fallingCircuitSound = SKAction.playSoundFileNamed("Scrape.wav", waitForCompletion: false)
+    let addCircuitSound = SKAction.playSoundFileNamed("Drip.wav", waitForCompletion: false)
+    
     var swipeHandler: ((Swap) -> ())?
     
     var selectionSprite = SKSpriteNode()
@@ -193,6 +199,9 @@ class GameScene: SKScene {
         let moveB = SKAction.moveTo(spriteA.position, duration: Duration)
         moveB.timingMode = .EaseOut
         spriteB.runAction(moveB)
+        
+        runAction(swapSound)
+        
     }
     
     func showSelectionIndicatorForCircuit(circuit: Circuit) {
@@ -234,6 +243,8 @@ class GameScene: SKScene {
         
         spriteA.runAction(SKAction.sequence( [moveA, moveB]), completion: completion)
         spriteB.runAction(SKAction.sequence( [moveB, moveA]) )
+        
+        runAction(invalidSwapSound)
         
     }
     
