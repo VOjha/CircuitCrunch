@@ -17,6 +17,9 @@ class Level {
     
     private var possibleSwaps = Set<Swap>()
     
+    var targetScore = 0
+    var maximumMoves = 0
+    
     func circuitAtColumn(column: Int, row: Int) -> Circuit? {
         assert(column >= 0 && column < NumColumns)
         assert(row >= 0 && row < NumRows)
@@ -87,6 +90,8 @@ class Level {
                         }
                     }
                 }
+                targetScore = dictionary["targetScore"] as! Int
+                maximumMoves = dictionary["moves"] as! Int
             }
         }
     }

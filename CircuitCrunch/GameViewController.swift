@@ -14,6 +14,13 @@ class GameViewController: UIViewController {
     var scene: GameScene!
     var level: Level!
     
+    var movesLeft = 0
+    var score = 0
+    
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var movesLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -51,6 +58,9 @@ class GameViewController: UIViewController {
     }
     
     func beginGame() {
+        movesLeft = level.maximumMoves
+        score = 0
+        updateLabels()
         shuffle()
     }
     
@@ -93,6 +103,12 @@ class GameViewController: UIViewController {
     func beginNextTurn() {
         level.detectPossibleSwaps()
         view.userInteractionEnabled = true
+    }
+    
+    func updateLabels() {
+        targetLabel.text = String(format: "%1d", level.targetScore)
+        movesLabel.text = String(format: "%1d", movesLeft)
+        scoreLabel.text = String(format: "%1d", score)
     }
     
 }
