@@ -260,7 +260,7 @@ class Level {
         
     }
     
-    func fillHoldes() -> [[Circuit]] {
+    func fillHoles() -> [[Circuit]] {
         
         var columns = [[Circuit]]()
         
