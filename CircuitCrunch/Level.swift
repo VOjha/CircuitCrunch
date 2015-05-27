@@ -294,13 +294,14 @@ class Level {
         for column in 0..<NumColumns {
             var array = [Circuit]()
             
-            for var row = NumRows-1; row >= 0 && circuits[column, row] == nil; -row {
+            for var row = NumRows - 1; row >= 0 && circuits[column, row] == nil; --row {
+                
                 if tiles[column, row] != nil {
+                    
                     var newCircuitType: CircuitType
                     do {
-                    newCircuitType = CircuitType.random()
-                    }
-                    while newCircuitType == circuitType
+                        newCircuitType = CircuitType.random()
+                    } while newCircuitType == circuitType
                     circuitType = newCircuitType
                     
                     let circuit = Circuit(column: column, row: row, circuitType: circuitType)
@@ -308,6 +309,7 @@ class Level {
                     array.append(circuit)
                 }
             }
+            
             if !array.isEmpty {
                 columns.append(array)
             }
