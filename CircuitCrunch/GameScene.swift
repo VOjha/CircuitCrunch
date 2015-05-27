@@ -248,6 +248,25 @@ class GameScene: SKScene {
         
     }
     
+    func animateMatchedCircuits(chains: Set<Chain>, completion: ()->()) {
+        
+        for chain in chains {
+            for circuit in chain.circuits {
+                if let sprite = circuit.sprite {
+                    if sprite.actionForKey("removing") == nil {
+                        let scaleAction = SKAction.scaleTo(0.1, duration: 0.3)
+                        scaleAction.timingMode = .EaseOut
+                        sprite.runAction(SKAction.sequence( [scaleAction, SKAction.removeFromParent()] ), withKey: "removing")
+                    }
+                }
+            }
+        }
+        
+        runAction(matchSound)
+        runAction(SKAction.waitForDuration(0.3), completion: completion)
+        
+    }
+    
 }
 
 

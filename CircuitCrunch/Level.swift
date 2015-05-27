@@ -209,6 +209,84 @@ class Level {
         return set
     }
     
+    private func detectVerticalMatches() -> Set<Chain> {
+        
+        var set = Set<Chain>()
+        
+        for column in 0..<NumColumns {
+            for var row = 0; row < NumRows - 2; {
+                
+                if let circuit = circuits[column, row] {
+                    let matchType = circuit.circuitType
+                    
+                    if circuits[column, row+1]?.circuitType == matchType && circuits[column, row+2]?.circuitType == matchType {
+                        let chain = Chain(chainType: .Vertical)
+                        do {
+                        chain.addCircuit(circuits[column, row]!)
+                        ++row
+                        }
+                        while row < NumRows && circuits[column, row]?.circuitType == matchType
+                        
+                        set.insert(chain)
+                        continue
+                    }
+                    
+                }
+                ++row
+            }
+        }
+        return set
+    }
+    
+    func removeMatches() -> Set<Chain> {
+        
+        let horizontalChains = detectHorizontalMatches()
+        let verticalChains = detectVerticalMatches()
+        
+        removeCircuits(horizontalChains)
+        removeCircuits(verticalChains)
+        
+        return horizontalChains.union(verticalChains)
+        
+    }
+    
+    private func removeCircuits(chains: Set<Chain>) {
+        
+        for chain in chains {
+            for circuit in chain.circuits {
+                circuits[circuit.column, circuit.row] = nil
+            }
+        }
+        
+    }
+    
+    func fillHoldes() -> [[Circuit]] {
+        
+        var columns = [[Circuit]]()
+        
+        for column in 0..<NumColumns {
+            var array = [Circuit]()
+            for row in 0..<NumRows {
+                if tiles[column, row] != nil && circuits[column, row] == nil {
+                    for lookup in (row+1)..<NumRows {
+                        if let circuit = circuits[column, lookup] {
+                            circuits[column, lookup] = nil
+                            circuits[column, row] = circuit
+                            circuit.row = row
+                            
+                            array.append(circuit)
+                            break
+                        }
+                    }
+                }
+            }
+            if !array.isEmpty {
+                columns.append(array)
+            }
+        }
+        return columns
+    }
+    
 }
 
 

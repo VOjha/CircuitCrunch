@@ -152,7 +152,6 @@
 			children = (
 				F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */,
 				F1A6C4E91B0FE517005C4425 /* GameScene.swift */,
-				F148D29E1B1533EB00645993 /* Chain.swift */,
 				F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */,
 				F1A6C4ED1B0FE517005C4425 /* Main.storyboard */,
 				F1A6C4F01B0FE517005C4425 /* Images.xcassets */,
@@ -167,6 +166,7 @@
 				F13C59EE1B14DECE00D86D37 /* Tile.swift */,
 				F13C59F11B14E01500D86D37 /* Extensions.swift */,
 				F1583A7F1B151290004F58FD /* Swap.swift */,
+				F148D29E1B1533EB00645993 /* Chain.swift */,
 			);
 			path = CircuitCrunch;
 			sourceTree = "<group>";

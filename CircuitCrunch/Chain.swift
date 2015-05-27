@@ -44,7 +44,7 @@ class Chain: Hashable, Printable {
         return circuits.count
     }
     
-    var descrption: String {
+    var description: String {
         return "type: \(chainType) circuits: \(circuits)"
     }
     
