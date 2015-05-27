@@ -17,9 +17,12 @@ class GameViewController: UIViewController {
     var movesLeft = 0
     var score = 0
     
+    var tapGestureRecognizer: UITapGestureRecognizer!
+    
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var gameOverPanel: UIImageView!
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -51,6 +54,8 @@ class GameViewController: UIViewController {
         
         scene.swipeHandler = handleSwipe
         
+        gameOverPanel.hidden = true
+        
         // Present the scene.
         skView.presentScene(scene)
         
@@ -61,6 +66,7 @@ class GameViewController: UIViewController {
         movesLeft = level.maximumMoves
         score = 0
         updateLabels()
+        level.resetComboMultiplier()
         shuffle()
     }
     
@@ -105,14 +111,37 @@ class GameViewController: UIViewController {
     }
     
     func beginNextTurn() {
+        level.resetComboMultiplier()
         level.detectPossibleSwaps()
         view.userInteractionEnabled = true
+        decrementMoves()
     }
     
     func updateLabels() {
         targetLabel.text = String(format: "%1d", level.targetScore)
         movesLabel.text = String(format: "%1d", movesLeft)
         scoreLabel.text = String(format: "%1d", score)
+    }
+    
+    func decrementMoves() {
+        --movesLeft
+        updateLabels()
+        
+        if score >= level.targetScore {
+            gameOverPanel.image = UIImage(named: "LevelComplete")
+            showGameOver()
+        } else if movesLeft == 0 {
+            gameOverPanel.image = UIImage(named: "GameOver")
+            showGameOver()
+        }
+    }
+    
+    func showGameOver() {
+        gameOverPanel.hidden = false
+        scene.userInteractionEnabled = false
+        
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideGameOver")
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
 }

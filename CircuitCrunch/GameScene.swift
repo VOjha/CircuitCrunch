@@ -59,6 +59,8 @@ class GameScene: SKScene {
         swipeFromColumn = nil
         swipeFromRow = nil
         
+        SKLabelNode(fontNamed: "Courier")
+        
     }
     
     func addSpritesForCircuits(circuits: Set<Circuit>) {
@@ -251,6 +253,7 @@ class GameScene: SKScene {
     func animateMatchedCircuits(chains: Set<Chain>, completion: ()->()) {
         
         for chain in chains {
+            animateScoreForChain(chain)
             for circuit in chain.circuits {
                 if let sprite = circuit.sprite {
                     if sprite.actionForKey("removing") == nil {
@@ -328,6 +331,25 @@ class GameScene: SKScene {
         }
         
         runAction(SKAction.waitForDuration(longestDuration), completion: completion)
+    }
+    
+    func animateScoreForChain(chain: Chain) {
+        let firstSprite = chain.firstCircuit().sprite!
+        let lastSprite = chain.lastCircuit().sprite!
+        let centerPosition = CGPoint(
+            x: (firstSprite.position.x + lastSprite.position.x)/2,
+            y: (firstSprite.position.y + lastSprite.position.y)/2 - 8)
+        
+        let scoreLabel = SKLabelNode(fontNamed: "Courier")
+        scoreLabel.fontSize = 16
+        scoreLabel.text = String(format: "%1d", chain.score)
+        scoreLabel.position = centerPosition
+        scoreLabel.zPosition = 300
+        circuitsLayer.addChild(scoreLabel)
+        
+        let moveAction = SKAction.moveBy(CGVector(dx: 0, dy: 3), duration: 0.7)
+        moveAction.timingMode = .EaseOut
+        scoreLabel.runAction(SKAction.sequence( [moveAction, SKAction.removeFromParent()] ))
     }
     
 }
