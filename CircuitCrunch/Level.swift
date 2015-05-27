@@ -287,6 +287,34 @@ class Level {
         return columns
     }
     
+    func topUpCircuits() -> [[Circuit]] {
+        var columns = [[Circuit]]()
+        var circuitType: CircuitType = .Unknown
+        
+        for column in 0..<NumColumns {
+            var array = [Circuit]()
+            
+            for var row = NumRows-1; row >= 0 && circuits[column, row] == nil; -row {
+                if tiles[column, row] != nil {
+                    var newCircuitType: CircuitType
+                    do {
+                    newCircuitType = CircuitType.random()
+                    }
+                    while newCircuitType == circuitType
+                    circuitType = newCircuitType
+                    
+                    let circuit = Circuit(column: column, row: row, circuitType: circuitType)
+                    circuits[column, row] = circuit
+                    array.append(circuit)
+                }
+            }
+            if !array.isEmpty {
+                columns.append(array)
+            }
+        }
+        return columns
+    }
+    
 }
 
 

@@ -78,7 +78,10 @@ class GameViewController: UIViewController {
         scene.animateMatchedCircuits(chains) {
             let columns = self.level.fillHoles()
             self.scene.animateFallingCircuits(columns) {
-                self.view.userInteractionEnabled = true
+                let columns = self.level.topUpCircuits()
+                self.scene.animateNewCircuits(columns) {
+                    self.view.userInteractionEnabled = true
+                }
             }
         }
     }

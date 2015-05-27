@@ -292,6 +292,36 @@ class GameScene: SKScene {
         
     }
     
+    func animateNewCircuits(columns: [[Circuit]], completion: ()->()) {
+        
+        var longestDuration: NSTimeInterval = 0
+        
+        for array in columns {
+            let startRow = array[0].row+1
+            
+            for (indx, circuit) in enumerate(array) {
+                
+                let sprite = SKSpriteNode(imageNamed: circuit.circuitType.spriteName)
+                sprite.position = pointForColumn(circuit.column, row: startRow)
+                circuitsLayer.addChild(sprite)
+                circuit.sprite = sprite
+                
+                let delay = 0.1 + 0.2*NSTimeInterval(array.count - indx - 1)
+                
+                let duration = NSTimeInterval(startRow - circuit.row)*0.1
+                longestDuration = max(longestDuration, duration+delay)
+                
+                let newPosition = pointForColumn(circuit.column, row: circuit.row)
+                let moveAction = SKAction.moveTo(newPosition, duration: duration)
+                moveAction.timingMode = .EaseOut
+                sprite.alpha = 0
+                sprite.runAction( SKAction.sequence( [SKAction.waitForDuration(delay), SKAction.group( [SKAction.fadeInWithDuration(0.05), moveAction, addCircuitSound] )] ) )
+                
+            }
+        }
+        runAction(SKAction.waitForDuration(longestDuration), completion: completion)
+    }
+    
 }
 
 
