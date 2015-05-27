@@ -29,6 +29,7 @@
 		F148D29B1B152E4800645993 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = F148D2951B152E4800645993 /* Ka-Ching.wav */; };
 		F148D29C1B152E4800645993 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F148D2961B152E4800645993 /* Mining by Moonlight.mp3 */; };
 		F148D29D1B152E4800645993 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = F148D2971B152E4800645993 /* Scrape.wav */; };
+		F148D29F1B1533EB00645993 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F148D29E1B1533EB00645993 /* Chain.swift */; };
 		F1583A801B151290004F58FD /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1583A7F1B151290004F58FD /* Swap.swift */; };
 		F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */; };
 		F1A6C4EA1B0FE517005C4425 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6C4E91B0FE517005C4425 /* GameScene.swift */; };
@@ -67,6 +68,7 @@
 		F148D2951B152E4800645993 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
 		F148D2961B152E4800645993 /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
 		F148D2971B152E4800645993 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		F148D29E1B1533EB00645993 /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		F1583A7F1B151290004F58FD /* Swap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swap.swift; sourceTree = "<group>"; };
 		F1A6C4E01B0FE517005C4425 /* CircuitCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6C4E41B0FE517005C4425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				F1A6C4E51B0FE517005C4425 /* AppDelegate.swift */,
 				F1A6C4E91B0FE517005C4425 /* GameScene.swift */,
+				F148D29E1B1533EB00645993 /* Chain.swift */,
 				F1A6C4EB1B0FE517005C4425 /* GameViewController.swift */,
 				F1A6C4ED1B0FE517005C4425 /* Main.storyboard */,
 				F1A6C4F01B0FE517005C4425 /* Images.xcassets */,
@@ -316,6 +319,7 @@
 				F1A6C4EC1B0FE517005C4425 /* GameViewController.swift in Sources */,
 				F13C59F21B14E01500D86D37 /* Extensions.swift in Sources */,
 				F13C59EF1B14DECE00D86D37 /* Tile.swift in Sources */,
+				F148D29F1B1533EB00645993 /* Chain.swift in Sources */,
 				F1A6C4E61B0FE517005C4425 /* AppDelegate.swift in Sources */,
 				F1A6C50C1B0FE7DA005C4425 /* Circuit.swift in Sources */,
 				F1A6C50E1B0FED57005C4425 /* Array2D.swift in Sources */,

@@ -180,6 +180,35 @@ class Level {
         return possibleSwaps.contains(swap)
     }
     
+    private func detectHorizontalMatches() -> Set<Chain> {
+        
+        var set = Set<Chain>()
+        
+        for row in 0..<NumRows {
+            for var column = 0; column < NumColumns - 2; {
+                
+                if let circuit = circuits[column, row] {
+                    let matchType = circuit.circuitType
+                    
+                    if circuits[column+1, row]?.circuitType == matchType && circuits[column+2, row]?.circuitType == matchType {
+                        let chain = Chain(chainType: .Horizontal)
+                        do {
+                        chain.addCircuit(circuits[column, row]!)
+                        ++column
+                        }
+                        while column < NumColumns && circuits[column, row]?.circuitType == matchType
+                        
+                        set.insert(chain)
+                        continue
+                    }
+                    
+                }
+                ++column
+            }
+        }
+        return set
+    }
+    
 }
 
 
