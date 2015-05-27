@@ -58,6 +58,18 @@
                                 <rect key="frame" x="27" y="259" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WgE-9m-1cv">
+                                <rect key="frame" x="137" y="611" width="100" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
+                                <state key="normal" title="Shuffle" backgroundImage="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shuffleButtonPressed:" destination="LVB-YS-i5n" eventType="touchUpInside" id="OH2-4L-QzS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -67,6 +79,7 @@
                         <outlet property="gameOverPanel" destination="UBw-Xa-Aau" id="5Sv-s2-c5k"/>
                         <outlet property="movesLabel" destination="Mqf-dr-K0b" id="tZn-Ur-aeJ"/>
                         <outlet property="scoreLabel" destination="0yB-5L-E8S" id="OUH-Bw-Hmq"/>
+                        <outlet property="shuffleButton" destination="WgE-9m-1cv" id="uz6-3K-Xg8"/>
                         <outlet property="targetLabel" destination="i8k-Ny-6zh" id="4od-k5-kdw"/>
                     </connections>
                 </viewController>
@@ -75,6 +88,9 @@
             <point key="canvasLocation" x="172.5" y="272.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button" width="100" height="36"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
