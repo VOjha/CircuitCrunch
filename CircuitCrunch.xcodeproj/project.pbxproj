@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13AAB291B16877900F9FA54 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13AAB281B16877900F9FA54 /* Grid.atlas */; };
 		F13C59CC1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
 		F13C59CD1B14DBBE00D86D37 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */; };
 		F13C59E41B14DE1800D86D37 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = F13C59DF1B14DE1800D86D37 /* Level_0.json */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F13AAB281B16877900F9FA54 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grid.atlas; sourceTree = "<group>"; };
 		F13C59CB1B14DBBE00D86D37 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 		F13C59DF1B14DE1800D86D37 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
 		F13C59E01B14DE1800D86D37 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				F13C59DE1B14DE1800D86D37 /* Levels */,
 				F1A6C4F21B0FE517005C4425 /* LaunchScreen.xib */,
 				F1A6C4E31B0FE517005C4425 /* Supporting Files */,
+				F13AAB281B16877900F9FA54 /* Grid.atlas */,
 				F1A6C50B1B0FE7DA005C4425 /* Circuit.swift */,
 				F1A6C50D1B0FED57005C4425 /* Array2D.swift */,
 				F1A6C50F1B0FEE99005C4425 /* Level.swift */,
@@ -279,6 +282,7 @@
 				F1A6C4F41B0FE517005C4425 /* LaunchScreen.xib in Resources */,
 				F148D2991B152E4800645993 /* Drip.wav in Resources */,
 				F13C59EC1B14DE1800D86D37 /* Level_4.json in Resources */,
+				F13AAB291B16877900F9FA54 /* Grid.atlas in Resources */,
 				F148D29A1B152E4800645993 /* Error.wav in Resources */,
 				F13C59E81B14DE1800D86D37 /* Level_2.json in Resources */,
 				F148D29D1B152E4800645993 /* Scrape.wav in Resources */,
