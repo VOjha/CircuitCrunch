@@ -10,6 +10,8 @@ class Chain: Hashable, Printable {
     
     var circuits = [Circuit]()
     
+    var score = 0
+    
     enum ChainType: Printable {
         case Horizontal
         case Vertical

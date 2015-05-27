@@ -90,6 +90,10 @@ class GameViewController: UIViewController {
         }
         
         scene.animateMatchedCircuits(chains) {
+            for chain in chains {
+                self.score += chain.score
+            }
+            self.updateLabels()
             let columns = self.level.fillHoles()
             self.scene.animateFallingCircuits(columns) {
                 let columns = self.level.topUpCircuits()

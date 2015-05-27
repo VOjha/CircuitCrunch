@@ -251,6 +251,9 @@ class Level {
         removeCircuits(horizontalChains)
         removeCircuits(verticalChains)
         
+        calculateScores(horizontalChains)
+        calculateScores(verticalChains)
+        
         return horizontalChains.union(verticalChains)
         
     }
@@ -320,6 +323,12 @@ class Level {
             }
         }
         return columns
+    }
+    
+    private func calculateScores(chains: Set<Chain>) {
+        for chain in chains {
+            chain.score = 60 * (chain.length - 2)
+        }
     }
     
 }
