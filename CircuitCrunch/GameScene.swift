@@ -120,8 +120,8 @@ class GameScene: SKScene {
             }
         }
         
-        for row in 0..<NumRows {
-            for column in 0..<NumColumns {
+        for row in 0...NumRows {
+            for column in 0...NumColumns {
                 let topLeft     = (column > 0) && (row < NumRows)
                     && level.tileAtColumn(column - 1, row: row) != nil
                 let bottomLeft  = (column > 0) && (row > 0)
