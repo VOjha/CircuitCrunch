@@ -167,7 +167,7 @@ class Level {
                             circuits[column, row+1] = circuit
                             
                             // Chain formed?
-                            if hasChainAtColumn(column, row: row+1) || hasChainAtColumn(column, row: row+1) {
+                            if hasChainAtColumn(column, row: row+1) || hasChainAtColumn(column, row: row) {
                                 set.insert( Swap(circuitA: circuit, circuitB: other) )
                             }
                             
