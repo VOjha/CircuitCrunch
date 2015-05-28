@@ -168,6 +168,16 @@ class GameViewController: UIViewController {
         }
     }
     
+    func hideGameOver() {
+        view.removeGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer = nil
+        
+        gameOverPanel.hidden = true
+        scene.userInteractionEnabled = true
+        
+        beginGame()
+    }
+    
 }
 
 
