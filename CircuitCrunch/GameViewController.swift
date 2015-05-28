@@ -18,15 +18,19 @@ class GameViewController: UIViewController {
     var movesLeft = 0
     var score = 0
     
-    var tapGestureRecognizer: UITapGestureRecognizer!
+    // Using this to give the ability to choose levels
+    // Default is Level_0 right now
+    var levelString = "Level_4"
     
+    var tapGestureRecognizer: UITapGestureRecognizer!
+/*
     lazy var backgroundMusic: AVAudioPlayer = {
         let url = NSBundle.mainBundle().URLForResource("Mining by Moonlight", withExtension: "mp3")
         let player = AVAudioPlayer(contentsOfURL: url, error: nil)
         player.numberOfLoops = -1
         return player
     }()
-    
+*/
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -61,7 +65,7 @@ class GameViewController: UIViewController {
         scene = GameScene(size: skView.bounds.size)
         scene.scaleMode = .AspectFill
         
-        level = Level(filename: "Level_4")
+        level = Level(filename: levelString)
         scene.level = level
         
         scene.addTiles()
@@ -73,9 +77,9 @@ class GameViewController: UIViewController {
         
         // Present the scene.
         skView.presentScene(scene)
-        
+/*
         backgroundMusic.play()
-        
+*/        
         beginGame()
     }
     
