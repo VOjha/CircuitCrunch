@@ -19,7 +19,7 @@ extension Dictionary {
             let data: NSData?
             do {
                 data = try NSData(contentsOfFile: path, options: NSDataReadingOptions())
-            } catch var error1 as NSError {
+            } catch let error1 as NSError {
                 error = error1
                 data = nil
             }
@@ -28,7 +28,7 @@ extension Dictionary {
                 let dictionary: AnyObject?
                 do {
                     dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
-                } catch var error1 as NSError {
+                } catch let error1 as NSError {
                     error = error1
                     dictionary = nil
                 }

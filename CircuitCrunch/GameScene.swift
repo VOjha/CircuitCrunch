@@ -112,7 +112,7 @@ class GameScene: SKScene {
         
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if let tile = level.tileAtColumn(column, row: row) {
+                if let _ = level.tileAtColumn(column, row: row) {
                     let tileNode = SKSpriteNode(imageNamed: "MaskTile")
                     tileNode.position = pointForColumn(column, row: row)
                     maskLayer.addChild(tileNode)
@@ -149,7 +149,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first as! UITouch
+        let touch = touches.first as UITouch!
         let location = touch.locationInNode(circuitsLayer)
         
         let (success, column, row) = convertPoint(location)
@@ -169,7 +169,7 @@ class GameScene: SKScene {
         
         if swipeFromColumn == nil { return }
         
-        let touch = touches.first as! UITouch
+        let touch = touches.first as UITouch!
         let location = touch.locationInNode(circuitsLayer)
         
         let (success, column, row) = convertPoint(location)
@@ -227,7 +227,7 @@ class GameScene: SKScene {
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        touchesEnded(touches, withEvent: event)
+        touchesEnded(touches!, withEvent: event)
     }
     
     func animateSwap(swap: Swap, completion: ()->()) {
@@ -260,7 +260,11 @@ class GameScene: SKScene {
         if let sprite = circuit.sprite {
             let texture = SKTexture(imageNamed: circuit.circuitType.highlightedSpriteName)
             selectionSprite.size = texture.size()
-            selectionSprite.runAction(SKAction.setTexture(texture))
+            if #available(iOS 9.0, *) {
+                selectionSprite.runAction(SKAction.setTexture(texture))
+            } else {
+                // Fallback on earlier versions
+            }
             
             sprite.addChild(selectionSprite)
             selectionSprite.alpha = 1.0
