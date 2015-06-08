@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Vidushi Ojha. All rights reserved.
 //
 
-class Chain: Hashable, Printable {
+class Chain: Hashable, CustomStringConvertible {
     
     var circuits = [Circuit]()
     
     var score = 0
     
-    enum ChainType: Printable {
+    enum ChainType: CustomStringConvertible {
         case Horizontal
         case Vertical
         
@@ -51,7 +51,7 @@ class Chain: Hashable, Printable {
     }
     
     var hashValue: Int {
-        return reduce(circuits, 0) { $0.hashValue ^ $1.hashValue }
+        return circuits.reduce(0) { $0.hashValue ^ $1.hashValue }
     }
     
 }

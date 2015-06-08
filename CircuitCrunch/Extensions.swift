@@ -16,24 +16,36 @@ extension Dictionary {
             
             var error: NSError?
             
-            let data = NSData(contentsOfFile: path, options: NSDataReadingOptions(), error: &error)
+            let data: NSData?
+            do {
+                data = try NSData(contentsOfFile: path, options: NSDataReadingOptions())
+            } catch var error1 as NSError {
+                error = error1
+                data = nil
+            }
             
             if let data = data {
-                let dictionary: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(), error: &error)
+                let dictionary: AnyObject?
+                do {
+                    dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+                } catch var error1 as NSError {
+                    error = error1
+                    dictionary = nil
+                }
                 
                 if let dictionary = dictionary as? Dictionary<String, AnyObject> {
                     return dictionary
                 } else {
-                    println("Level file '\(filename)' is not valid JSON: \(error!)")
+                    print("Level file '\(filename)' is not valid JSON: \(error!)")
                     return nil
                 }
             } else {
-                println("Could not load level file: \(filename), error: \(error!)")
+                print("Could not load level file: \(filename), error: \(error!)")
                 return nil
             }
             
         } else {
-            println("Could not find level file: \(filename)")
+            print("Could not find level file: \(filename)")
             return nil
         }
         

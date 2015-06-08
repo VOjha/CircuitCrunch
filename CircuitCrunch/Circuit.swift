@@ -8,7 +8,7 @@
 
 import SpriteKit
     
-enum CircuitType: Int, Printable {
+enum CircuitType: Int, CustomStringConvertible {
     case Unknown = 0, Sensor, Threshold, Electronics, Circuit, Memory, Robot
     
     var spriteName: String {
@@ -36,7 +36,7 @@ enum CircuitType: Int, Printable {
     }
 }
 
-class Circuit: Printable, Hashable {
+class Circuit: CustomStringConvertible, Hashable {
     
     var column: Int
     var row: Int

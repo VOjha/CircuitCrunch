@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     
     // Using this to give the ability to choose levels
     // Default is Level_0 right now
-    var levelString = "Level_4"
+    var levelString = "Level_0"
     
     var tapGestureRecognizer: UITapGestureRecognizer!
 /*
@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
         return true
     }
     
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
     }
     

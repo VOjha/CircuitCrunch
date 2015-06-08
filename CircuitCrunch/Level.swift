@@ -32,10 +32,10 @@ class Level {
     func shuffle() -> Set<Circuit> {
         var set: Set<Circuit>
         
-        do {
+        repeat {
             set = createInitialCircuits()
             detectPossibleSwaps()
-            println("possible swaps: \(possibleSwaps)")
+            print("possible swaps: \(possibleSwaps)")
         }
         while possibleSwaps.count == 0
         
@@ -51,7 +51,7 @@ class Level {
                 if tiles[column, row] != nil {
                 
                     var circuitType: CircuitType
-                    do {
+                    repeat {
                         circuitType = CircuitType.random()
                     }
                         while (column >= 2 &&
@@ -84,9 +84,9 @@ class Level {
         
         if let dictionary = Dictionary<String, AnyObject>.loadJSONFromBundle(filename) {
             if let tilesArray: AnyObject = dictionary["tiles"] {
-                for (row, rowArray) in enumerate(tilesArray as! [[Int]]) {
+                for (row, rowArray) in (tilesArray as! [[Int]]).enumerate() {
                     let tileRow = NumRows - row - 1
-                    for (column, value) in enumerate(rowArray) {
+                    for (column, value) in rowArray.enumerate() {
                         if value == 1 {
                             tiles[column, tileRow] = Tile()
                         }
@@ -199,7 +199,7 @@ class Level {
                     
                     if circuits[column+1, row]?.circuitType == matchType && circuits[column+2, row]?.circuitType == matchType {
                         let chain = Chain(chainType: .Horizontal)
-                        do {
+                        repeat {
                         chain.addCircuit(circuits[column, row]!)
                         ++column
                         }
@@ -228,7 +228,7 @@ class Level {
                     
                     if circuits[column, row+1]?.circuitType == matchType && circuits[column, row+2]?.circuitType == matchType {
                         let chain = Chain(chainType: .Vertical)
-                        do {
+                        repeat {
                         chain.addCircuit(circuits[column, row]!)
                         ++row
                         }
@@ -309,7 +309,7 @@ class Level {
                 if tiles[column, row] != nil {
                     
                     var newCircuitType: CircuitType
-                    do {
+                    repeat {
                         newCircuitType = CircuitType.random()
                     } while newCircuitType == circuitType
                     circuitType = newCircuitType

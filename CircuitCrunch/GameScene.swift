@@ -147,7 +147,7 @@ class GameScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         let touch = touches.first as! UITouch
         let location = touch.locationInNode(circuitsLayer)
@@ -165,7 +165,7 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if swipeFromColumn == nil { return }
         
@@ -217,7 +217,7 @@ class GameScene: SKScene {
         
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if selectionSprite.parent != nil && swipeFromColumn != nil {
             hideSelectionIndicator()
         }
@@ -226,7 +226,7 @@ class GameScene: SKScene {
         swipeFromRow = nil
     }
     
-    override func touchesCancelled(touches: Set<NSObject>, withEvent event: UIEvent!) {
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         touchesEnded(touches, withEvent: event)
     }
     
@@ -319,7 +319,7 @@ class GameScene: SKScene {
         
         var longestDuration: NSTimeInterval = 0
         for array in columns {
-            for (indx, circuit) in enumerate(array) {
+            for (indx, circuit) in array.enumerate() {
                 let newPosition = pointForColumn(circuit.column, row: circuit.row)
                 
                 let delay = 0.05 + 0.15*NSTimeInterval(indx)
@@ -348,7 +348,7 @@ class GameScene: SKScene {
             
             let startRow = array[0].row + 1
             
-            for (idx, circuit) in enumerate(array) {
+            for (idx, circuit) in array.enumerate() {
                 
                 let sprite = SKSpriteNode(imageNamed: circuit.circuitType.spriteName)
                 sprite.position = pointForColumn(circuit.column, row: startRow)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Vidushi Ojha. All rights reserved.
 //
 
-struct Swap: Printable, Hashable {
+struct Swap: CustomStringConvertible, Hashable {
     
     let circuitA: Circuit
     let circuitB: Circuit
